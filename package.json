@@ -1,0 +1,30 @@
+{
+  "name": "apiplatform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Postman-like, privacy-first API development platform with Bring-Your-Own-Model Agent Mode.",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @apiplatform/web && npm run build -w @apiplatform/server && npm run build -w @apiplatform/cli",
+    "dev": "concurrently -n server,web -c green,cyan \"npm run dev -w @apiplatform/server\" \"npm run dev -w @apiplatform/web\"",
+    "dev:server": "npm run dev -w @apiplatform/server",
+    "dev:web": "npm run dev -w @apiplatform/web",
+    "db:migrate": "npm run db:migrate -w @apiplatform/server",
+    "seed": "npm run seed -w @apiplatform/server",
+    "test": "npm run test -w @apiplatform/shared && npm run test -w @apiplatform/server && npm run test -w @apiplatform/web",
+    "test:unit": "npm run test -w @apiplatform/shared && npm run test -w @apiplatform/server",
+    "typecheck": "npm run typecheck -w @apiplatform/shared && npm run typecheck -w @apiplatform/server && npm run typecheck -w @apiplatform/web && npm run typecheck -w @apiplatform/cli",
+    "lint": "npm run lint -w @apiplatform/server && npm run lint -w @apiplatform/web && npm run lint -w @apiplatform/cli"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  }
+}
