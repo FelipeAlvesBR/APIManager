@@ -1,7 +1,6 @@
 # API Platform
 
-A privacy-first, Postman-like API development platform built from the
-[`AgentPromptAPISystem.md`](./AgentPromptAPISystem.md) specification. It is an
+A privacy-first, Postman-like API development platform. It is an
 original implementation — no Postman code, branding, or assets are reproduced.
 
 The product covers the everyday API workflow:
